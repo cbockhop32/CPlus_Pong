@@ -9,18 +9,9 @@ set(CMAKE_BUILD_TYPE Debug)
 
 project(pong VERSION 1.0)
 
-
 find_package(raylib 2.5.0 REQUIRED)
 INCLUDE_DIRECTORIES(${raylib_INCLUDE_DIR})
 
-# Adding Boost
-find_package(Boost 1.40 COMPONENTS program_options REQUIRED)
-INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIR})
-
-
-
 add_executable(${PROJECT_NAME} main.cpp game_functions.cpp)
 
-
-
-TARGET_LINK_LIBRARIES(${PROJECT_NAME} LINK_PUBLIC ${Boost_LIBRARIES}  raylib)
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} LINK_PUBLIC raylib)
